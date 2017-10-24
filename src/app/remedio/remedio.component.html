@@ -1,0 +1,40 @@
+<div class="jumbotron">
+  <div class="row">
+      <div class="col-sm-12">
+          <h2> Remedio</h2>
+          <div class="col-sm-3">
+              <input class="form-control" type="text" [(ngModel)]= produto placeholder="busca produto">
+          </div>
+          <div class="col-sm-1">
+              <button align="center" class="btn btn-primary" (click)='pesquisaRemedio()'> Pesquisar </button>
+          </div>
+      </div>
+
+      <div class="col-sm-12">
+        <br/>
+        <div class="col-sm-12">
+                <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Codigo Barra</th>
+                                <th>Apresentacao</th>
+                                <th>Principio Ativo</th>
+                                <th>Quantidade</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let r of remedios">
+                            <tr>
+                                <td>{{r.produto}}</td>
+                                <td>{{r.codBarraEan}}</td>
+                                <td>{{r.apresentacao}}</td>
+                                <td>{{r.principioAtivo}}</td>
+                                <td>{{r.quantidade}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+        </div>
+       
+    </div>
+  </div>
+</div>
