@@ -14,7 +14,7 @@ export class EstabelecimentoService {
   constructor(private http: Http) { }
 
 
-  buscarEstabeleciomentos(especialidade: string): Observable<string[]> {
+  buscarEstabelecimentos(especialidade: string): Observable<string[]> {
     return this.http.get(this.apiUrl + especialidade)
       .map(this.extractData)
       .catch(this.handleError);

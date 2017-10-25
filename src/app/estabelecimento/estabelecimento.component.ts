@@ -6,9 +6,9 @@ import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
-  selector: 'app-remedio',
-  templateUrl: './remedio.component.html',
-  styleUrls: ['./remedio.component.css']
+  selector: 'app-estabelecimento',
+  templateUrl: './estabelecimento.component.html',
+  styleUrls: ['./estabelecimento.component.css']
 })
 
 export class EstabelecimentoComponent implements OnInit {
@@ -19,10 +19,10 @@ export class EstabelecimentoComponent implements OnInit {
 
   errorMessage: string;
 
-  constructor(public remedio: EstabelecimentoService) { }
+  constructor(private especialidade: EstabelecimentoService) { }
 
-  pesquisaRemedio() {
-    this.remedio.buscarRemedio(this.especiabilidade)
+  buscarEstabelecimentos() {
+    this.especialidade.buscarEstabelecimentos(this.especiabilidade)
       .subscribe(
       empresas => this.empresas = empresas,
       error => this.errorMessage = <any>error);
