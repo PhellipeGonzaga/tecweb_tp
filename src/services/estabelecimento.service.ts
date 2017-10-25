@@ -9,13 +9,13 @@ import 'rxjs/add/operator/map';
 export class EstabelecimentoService {
 
 
-  private apiUrl = 'http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/estabelecimentos?nomeFantasia=';
+  private apiUrl = 'http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/estabelecimentos?especialidade=';
 
   constructor(private http: Http) { }
 
 
-  buscarRemedio(nome: string): Observable<string[]> {
-    return this.http.get(this.apiUrl + nome)
+  buscarEstabeleciomentos(especialidade: string): Observable<string[]> {
+    return this.http.get(this.apiUrl + especialidade)
       .map(this.extractData)
       .catch(this.handleError);
   }

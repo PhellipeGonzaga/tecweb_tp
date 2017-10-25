@@ -11,6 +11,7 @@ import { EmpregoPesquisarComponent } from './emprego-pesquisar/emprego-pesquisar
 
 import { AgmCoreModule } from '@agm/core';
 import { RemedioComponent } from './remedio/remedio.component';
+import { EstabeleciomentoComponent } from './estabeleciomento/estabeleciomento.component';
 
 const appRoutes: Routes = [
   { path: 'emprego', component: EmpregoPesquisarComponent },
@@ -18,7 +19,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, EmpregoPesquisarComponent, RemedioComponent],
+  declarations: [AppComponent, EmpregoPesquisarComponent, RemedioComponent, EstabeleciomentoComponent],
 
   imports: [BrowserModule, HttpModule, FormsModule,
     RouterModule.forRoot(appRoutes), AgmCoreModule.forRoot({ apiKey: 'AIzaSyAaYk-47711DvR5617oV2jy0Dn3VAY2RfY' })],

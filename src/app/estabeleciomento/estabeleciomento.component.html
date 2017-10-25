@@ -1,0 +1,40 @@
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2> Estabeleciomentos</h2>
+      <div class="col-sm-3">
+        <input class="form-control" type="text" [(ngModel)]= especiabilidade placeholder="busca area">
+      </div>
+      <div class="col-sm-1">
+        <button align="center" class="btn btn-primary" (click)='buscarEstabeleciomentos()'> Pesquisar </button>
+      </div>
+    </div>
+
+    <div class="col-sm-12">
+      <br/>
+      <div class="col-sm-12">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Municipio</th>
+              <th>UF</th>
+              <th>Nome</th>
+              <th>Categoria</th>
+              <th>Vinculo Sus</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let e of empresas">
+            <tr>
+              <td>{{e.municipio}}</td>
+              <td>{{e.uf}}</td>
+              <td>{{e.nomeFantasia}}</td>
+              <td>{{e.categoria}}</td>
+              <td>{{e.vinculoSus}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
