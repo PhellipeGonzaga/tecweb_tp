@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 
 
 @Injectable()
-export class AssistenteSocial {
+export class AssistenteSocialService {
 
     private url = 'http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/assistenciasocial/cras?municipio=';
 
