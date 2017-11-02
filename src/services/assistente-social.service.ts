@@ -14,7 +14,7 @@ export class AssistenteSocialService {
     constructor(private http: Http) { }
 
 
-    buscarSines(municipio: string): Observable<string[]> {
+    buscarAssistente(municipio: string): Observable<string[]> {
         return this.http.get(this.url + municipio)
             .map(this.extractData)
             .catch(this.handleError);
