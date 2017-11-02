@@ -1,0 +1,40 @@
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2> ASSISTENTE SOCIAL</h2>
+            <div class="col-sm-3">
+                <input class="form-control" type="text" [(ngModel)]= munici placeholder="busca assistente">
+            </div>
+            <div class="col-sm-1">
+                <button align="center" class="btn btn-primary" (click)='pesquisarAssistente()'> Pesquisar </button>
+            </div>
+        </div>
+        
+        <div class="col-sm-12">
+            <br/>
+            <div class="col-sm-12">
+                    <table class=" table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Municipio</th>
+                                    <th>Nome</th>
+                                    <th>Endereço</th>
+                                    <th>numero</th>
+                                    <th>CEP</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let s of assistentes">
+                                <tr>
+                                    <td>{{s.nomeMunicipio}}</td>
+                                    <td>{{s.nomeCras}}</td>
+                                    <td>{{s.endereco}}</td>
+                                    <td>{{s.numero}}</td>
+                                    <td>{{s.cep}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+            </div>
+           
+        </div>
+    </div>
+</div>

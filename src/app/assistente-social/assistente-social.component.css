@@ -1,0 +1,11 @@
+.jumbotron{
+    width: 1200px;
+    text-align: center;
+    margin-top: 20px; 
+    margin-right: auto;
+    margin-left: auto;
+}
+
+h3,th{
+    text-align: center;
+}
