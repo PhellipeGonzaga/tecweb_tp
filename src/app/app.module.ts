@@ -9,25 +9,28 @@ import { RouterModule, Routes } from '@angular/router';
 import { EmpregoService } from '../services/emprego.service';
 import { RemedioService } from '../services/remedio.service';
 import { EstabelecimentoService } from '../services/estabelecimento.service';
+import { AssistenteSocialService }  from '../services/assistente-social.service';
 
 
 import { EmpregoPesquisarComponent } from './emprego-pesquisar/emprego-pesquisar.component';
 import { RemedioComponent } from './remedio/remedio.component';
 import { EstabelecimentoComponent } from './estabelecimento/estabelecimento.component';
+import { AssistenteSocialComponent } from './assistente-social/assistente-social.component';
 
 const appRoutes: Routes = [
   { path: 'emprego', component: EmpregoPesquisarComponent },
   { path: 'remedio', component: RemedioComponent },
-  { path: 'estabelecimento', component: EstabelecimentoComponent}
+  { path: 'estabelecimento', component: EstabelecimentoComponent},
+  { path: 'assistente', component: AssistenteSocialComponent}
 ];
 
 @NgModule({
-  declarations: [AppComponent, EmpregoPesquisarComponent, RemedioComponent, EstabelecimentoComponent],
+  declarations: [AppComponent, EmpregoPesquisarComponent, RemedioComponent, EstabelecimentoComponent, AssistenteSocialComponent],
 
   imports: [BrowserModule, HttpModule, FormsModule,
     RouterModule.forRoot(appRoutes), AgmCoreModule.forRoot({ apiKey: 'AIzaSyAaYk-47711DvR5617oV2jy0Dn3VAY2RfY' })],
 
-  providers: [AppComponent, EmpregoService, RemedioService,EstabelecimentoService],
+  providers: [AppComponent, EmpregoService, RemedioService,EstabelecimentoService,AssistenteSocialService],
 
   bootstrap: [AppComponent]
 })
