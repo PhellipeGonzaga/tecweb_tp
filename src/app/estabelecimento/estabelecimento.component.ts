@@ -28,6 +28,8 @@ export class EstabelecimentoComponent implements OnInit {
       error => this.errorMessage = <any>error);
   }
 
+ 
+
   ngOnInit() {
   }
 
