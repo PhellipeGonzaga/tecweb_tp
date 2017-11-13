@@ -9,48 +9,67 @@
                 <button align="center" class="btn btn-primary" (click)='pesquisarSines()'> Pesquisar </button>
             </div>
         </div>
-        
+
         <div class="col-sm-12">
             <br/>
             <div class="col-sm-12">
-                    <table class=" table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Municipio</th>
-                                    <th>Bairro</th>
-                                    <th>Nome</th>
-                                    <th>Entidade Conveniada</th>
-                                    <th>Endereço</th>
-                                    <th>Telefone</th>
-                                    <th>CEP</th>
-                                    <th>CodPosto</th>
-                                    <th>UF</th>
-                                    <th>lat</th>
-                                    <th>long</th>
-                                </tr>
-                            </thead>
-                            <tbody *ngFor="let s of sines">
-                                <tr>
-                                    <td>{{s.municipio}}</td>
-                                    <td>{{s.bairro}}</td>
-                                    <td>{{s.nome}}</td>
-                                    <td>{{s.entidadeConveniada}}</td>
-                                    <td>{{s.endereco}}</td>
-                                    <td>{{s.telefone}}</td>
-                                    <td>{{s.cep}}</td>
-                                    <td>{{s.codPosto}}</td>
-                                    <td>{{s.uf}}</td>
-                                    <!--
-                                    <agm-map [latitude]="s.lat" [longitude]="s.long">
-                                        <agm-marker [latitude]="s.lat" [longitude]="s.long"></agm-marker>
-                                    </agm-map> -->
-                                    <td>{{s.lat}}</td>
-                                    <td>{{s.long}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <table class=" table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Municipio</th>
+                            <th>Bairro</th>
+                            <th>Nome</th>
+                            <th>Entidade Conveniada</th>
+                            <th>Endereço</th>
+                            <th>Telefone</th>
+                            <th>CEP</th>
+                            <th>CodPosto</th>
+                            <th>UF</th>
+                            <th>Localizacao</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let s of sines">
+                        <tr>
+                            <td>{{s.municipio}}</td>
+                            <td>{{s.bairro}}</td>
+                            <td>{{s.nome}}</td>
+                            <td>{{s.entidadeConveniada}}</td>
+                            <td>{{s.endereco}}</td>
+                            <td>{{s.telefone}}</td>
+                            <td>{{s.cep}}</td>
+                            <td>{{s.codPosto}}</td>
+                            <td>{{s.uf}}</td>
+                            <td>
+                                <span>
+                                    <input type="button" class="form-control" (click)="openMap(s.lat,s.long)" value="Map" data-toggle="modal"
+                                        data-target="#modalMap" />
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-           
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="modal fade" id="modalMap" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">{{munici}}</h4>
+                </div>
+                <div class="modal-body">
+                    <agm-map [latitude]= "latitude" [longitude]= "longitude">
+                        <agm-marker [latitude]= "latitude" [longitude]= "longitude"></agm-marker>
+                    </agm-map>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fecha</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

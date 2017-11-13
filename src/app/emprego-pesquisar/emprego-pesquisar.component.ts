@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmpregoService } from '../../services/emprego.service';
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import 'rxjs/add/operator/map';
-import { Observable } from 'rxjs/Observable';
+import { AgmCoreModule } from '@agm/core';
 
 
 @Component({
@@ -15,10 +13,11 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class EmpregoPesquisarComponent implements OnInit {
 
+  
   munici: string;
-
+  latitude:string;
+  longitude:string;
   sines: string[];
-
   errorMessage: string;
 
   constructor(public emprego: EmpregoService) { }
@@ -30,5 +29,10 @@ export class EmpregoPesquisarComponent implements OnInit {
       .subscribe(
       sines => this.sines = sines,
       error => this.errorMessage = <any>error);
+  }
+
+  openMap(lat, long){
+    this.latitude = lat;
+    this.longitude = long;
   }
 }
